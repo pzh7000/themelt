@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    FLEXBOX
+\*------------------------------------*/
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-2-columns {
+  flex: 1 1 100%;
+}
+.flex-4-columns {
+  flex: 1;
+}
+
+.flex-4-columns_responsive {
+  flex: 1 1 100%;
+}
+.post-image {
+  max-height: 12em;
+}
+
+
+@media screen and (min-width: 570px) {
+  .flex-2-columns {
+    flex: 1;
+    padding: 10px;
+  }
+  .flex-4-columns_responsive {
+    flex: 0 1 50%;
+    padding: 10px;
+  }
+  .post-image {
+    max-height: 9em;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .flex-4-columns_responsive {
+    flex: 0 1 30%;
+    padding: 10px;
+  }
+  .post-image {
+    max-height: 12em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flex-4-columns_responsive {
+    flex: 0 1 25%;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+button {
+    padding: 1em;
+    border: 2px solid #d3d3d3;
+    background-color: #d3d3d3;
+    margin: .5em;
+    min-width: 14.5em;
+}
+
+.btn {
+  padding: 1em;
+  border: 2px solid #d3d3d3;
+  background-color: #d3d3d3;
+  margin: .5em;
+  min-width: 14.5em;
+}
+
+.search-btn {
+  padding: .5em;
+  border: 2px solid #d3d3d3;
+  background-color: #d3d3d3;
+  margin: .5em;
+  min-width: 12.5em;
+}
+
+.btn:hover {
+    border: 2px solid #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-active {
+  background-color: #4CAF50;
+  color: white;
+  border: 2px solid #4CAF50;
+}
+.btn-2 {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+.btn-2-active {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}

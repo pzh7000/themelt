@@ -1,0 +1,51 @@
+.purpose {
+  padding-top: 10em;
+  padding-bottom: 10em;
+  /* position: relative; */
+  z-index: 3;
+  background-color: grey;
+  color: white;
+
+  p {
+      max-width: 36em;
+      margin: auto;
+      font-size: 1.5em;
+  }
+}
+
+.about {
+  margin: 5em 0;
+}
+
+.about-img {
+    padding: 3em;
+    background-color: yellow;
+}
+
+.mission {
+  text-align: center;
+  margin: 5em 0;
+
+  p {
+    font-size: 1.5em;
+  }
+}
+
+.article-list {
+  h3 {
+    a{
+      color: #464646;
+      text-decoration: none;
+    }
+  }
+  p {
+    line-height: 1.5;
+  }
+  .views-row {
+    margin: 40px 0;
+  }
+  .views-field-view-node a {
+    color: red;
+    text-decoration: none;
+  }
+}
