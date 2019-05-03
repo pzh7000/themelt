@@ -33,9 +33,11 @@
 
 			<!-- header -->
 			<header class="main-header">
-				<img class="aligncenter" src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class="">
-				<h1 class="post-title align-center">Square One</h1>
-				<h2 class="align-center">Career Coaching</h2>
+				<div class="sq1-header">
+					<img class="aligncenter" src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class="">
+					<h1 class="post-title align-center">Square One</h1>
+					<h2 class="align-center">Career Coaching</h2>
+				</div>
 			  <div class="topnav" id="topNav">
 
 			    <div class="container">

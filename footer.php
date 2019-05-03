@@ -3,7 +3,7 @@
 
 				<!-- copyright -->
 				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> The Restorative Chef
+					&copy; <?php echo date('Y'); ?> Square One Career Coaching
 				</p>
 				<!-- /copyright -->
 
