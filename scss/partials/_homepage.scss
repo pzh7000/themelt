@@ -4,20 +4,12 @@
   padding-bottom: 16em;
   max-width: 49em;
   margin: auto;
-  h1 {
-    margin: 0;
-    color: $charcoal;
-  }
-  h2 {
-    margin: 0;
-    color: $charcoal;
-  }
 }
 
 .purpose {
   padding-top: 10em;
   padding-bottom: 10em;
-  background-color: $dark;
+  background-color: $black;
   color: $white;
 
   p {
@@ -61,14 +53,15 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  color: $black;
 }
 
 .mission {
   padding-top: 10em;
   padding-bottom: 10em;
   text-align: center;
-  background-color: $dark;
-  color: $white;
+  background-color: $white;
+  color: $black;
 
   h2 {
     border-bottom: 5px solid $yellow;
@@ -82,11 +75,30 @@
   }
 }
 
+.consulting {
+  padding-top: 10em;
+  padding-bottom: 10em;
+  text-align: left;
+  background-color: $black;
+  color: $white;
+
+  h2 {
+    border-bottom: 5px solid $yellow;
+    max-width: 500px;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+  li {
+    font-size: 1.5em;
+  }
+}
+
 #services {
   border-bottom: 5px solid $yellow;
-  max-width: 10em;
-  margin-left: auto;
-  margin-right: auto;
+  width: 275px;
+
   margin-top: 3em;
   margin-bottom: 1.5em;
 }
@@ -101,14 +113,9 @@
 }
 
 .contact {
-  background-color: $dark;
-  color: $white;
-}
-
-.contact {
   padding-bottom: 0;
   text-align: center;
-  background-color: $dark;
+  background-color: $black;
   color: $white;
   border-right: none;
 

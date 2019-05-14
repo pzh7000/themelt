@@ -14,8 +14,7 @@
 
 		<?php wp_head(); ?>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Charmonman:700" rel="stylesheet">
-		<!-- <link href="https://fonts.googleapis.com/css?family=Alegreya:9\600|Archivo+Black|Noto+Sans+SC" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css?family=Pontano+Sans|Sarala|Scada" rel="stylesheet">
 		<script>
         // conditionizr.com
         // configure environment tests
