@@ -6,13 +6,15 @@ function toggleNav(x) {
       toggle.className = "toggleNav";
   };
    x.classList.toggle("change");
-  // var hamburger = document.getElementById("hamburger-nav");
-  // if (hamburger.className === "icon hamburger") {
-  //     hamburger.className += " active";
-  // } else {
-  //     hamburger.className = "icon hamburger";
-  // }
 }
+
+// function collapseNav() {
+//   $('.topnav a').click(function (e) {
+//     console.log('click');
+//    $('.toggleNav').collapse('active');
+//  });
+// }
+
 
 
 (function ($, root, undefined) {
@@ -27,6 +29,21 @@ function toggleNav(x) {
 	    var $nav = $(".topnav");
 	    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 	  });
+
+
+    $('.toggleNav a').click(function (e) {
+      // $('.toggleNav').toggle('active');
+      var toggle = document.getElementById("toggleNav");
+      var x = document.getElementById("hamburgular")
+      if (toggle.className === "toggleNav") {
+          toggle.className += " active";
+      } else {
+          toggle.className = "toggleNav";
+      };
+       x.classList.toggle("change");
+    });
+
+
 
 
 	});

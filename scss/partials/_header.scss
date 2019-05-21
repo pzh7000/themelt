@@ -13,7 +13,7 @@
   top: 0;
 
   a {
-    color: #7A7055;
+    color: $black;
     text-decoration: none;
     font-size: 22px;
   }
@@ -89,12 +89,12 @@ h2.homeLogo {
   }
 }
 
-@media screen and (min-width: $md ) {
-  .desktopNav {
-    display: flex;
-    align-items: center;
-  }
-}
+// @media screen and (min-width: $md ) {
+//   .desktopNav {
+//     display: flex;
+//     align-items: center;
+//   }
+// }
 
 .mobileNav {
   display: flex;
@@ -106,11 +106,11 @@ h2.homeLogo {
   }
 }
 
-@media screen and (min-width: $md) {
-  .mobileNav {
-    display: none;
-  }
-}
+// @media screen and (min-width: $md) {
+//   .mobileNav {
+//     display: none;
+//   }
+// }
 
 .toggleNav {
   display: none;
@@ -118,6 +118,9 @@ h2.homeLogo {
   background-color: $white;
   width: 100%;
   left: 0;
+  top: 0;
+  padding-top: 1em;
+  z-index: -1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
   ul {
