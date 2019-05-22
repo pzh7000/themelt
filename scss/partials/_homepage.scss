@@ -9,6 +9,7 @@
 .purpose {
   background-color: $darkblue;
   color: $white;
+  padding-bottom: 3em;
 
   p {
     max-width: 36em;
@@ -30,6 +31,11 @@
 .about .wp-block-column:first-child {
   background-color: $darkblue;
   margin-right: 0;
+}
+
+.about .wp-block-column:last-child {
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .about-img {
@@ -75,6 +81,8 @@
   text-align: left;
   background-color: $darkblue;
   color: $white;
+  padding-top: 3em;
+  padding-bottom: 3em;
 
   h2 {
     border-bottom: 5px solid $grey;
@@ -107,7 +115,8 @@
 }
 
 .contact {
-  padding-bottom: 0;
+  padding-bottom: 3em;
+  padding-top: 3em;
   text-align: center;
   background-color: $grey;
   color: $black;
@@ -140,6 +149,7 @@
 
 @media screen and (min-width: $sm ) {
   .contact {
+    padding-top: 0;
     border-right: 20px solid $darkblue;
     padding-bottom: 4em;
   }
@@ -186,5 +196,9 @@
     p {
       font-size: 1.5em;
     }
+  }
+  .about .wp-block-column:last-child {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
