@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- Page.php -->
 
-<section id="primary" class="content-area">
+
 	<main>
 	<div class="about">
 		<div class="about-overlay">
@@ -110,6 +110,6 @@
 
 
 		</main>
-</section><!-- #primary -->
+
 
 <?php get_footer(); ?>
