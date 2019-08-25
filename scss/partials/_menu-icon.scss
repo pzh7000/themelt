@@ -1,20 +1,31 @@
 
 .bar1, .bar2, .bar3 {
-  width: 30px;
   height: 4px;
-  background-color: #333;
+  background-color: $white;
   margin: 6px 0;
   transition: 0.4s;
 }
 
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-7px, 5px);
+.bar1, .bar3 {
+  width: 10px;
+  margin-left: 10px;
 }
 
-.change .bar2 {opacity: 0;}
+.bar2 {
+  width: 30px;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, -2px);
+  transform: rotate(-45deg) translate(-6px, -2px);
+}
+
+.change .bar2 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
 
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(-45deg) translate(7px, 3px);
+  transform: rotate(-45deg) translate(7px, 3px);
 }

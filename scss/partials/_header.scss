@@ -2,7 +2,8 @@
 .main-header {
   // height: 300px;
   // background: url(../images/dei_hero.jpg) no-repeat center center;
-  background-color: $grey;
+  background-color: $black;
+  color: $white;
   position: relative;
   z-index: 2;
 }
@@ -11,12 +12,19 @@
   position: fixed;
   width: 100%;
   top: 0;
+  height: 53px;
+  background-color: transparent;
+  z-index: 2;
 
   a {
-    color: $black;
+    color: $white;
     text-decoration: none;
     font-size: 22px;
   }
+}
+
+.topnav.scrolled {
+  background-color: $black;
 }
 
 .homeLogo {
@@ -38,6 +46,15 @@
 h2.homeLogo {
   font-size: 1em;
 }
+
+// li#menu-item-62::after {
+//   content: '\f002';
+//   font-family: FontAwesome;
+//   font-weight: normal;
+//   font-style: normal;
+//   margin:0px 0px 0px 10px;
+//   text-decoration:none;
+// }
 
 @media screen and (min-width: $md ) {
   .homeLogo {
@@ -69,7 +86,7 @@ h2.homeLogo {
   li ul {
     display: none;
     position: absolute;
-    background-color: $white;
+    background-color: $black;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -78,6 +95,7 @@ h2.homeLogo {
     margin-left: -15px;
 
     a {
+      color: $white;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -89,12 +107,17 @@ h2.homeLogo {
   }
 }
 
-// @media screen and (min-width: $md ) {
-//   .desktopNav {
-//     display: flex;
-//     align-items: center;
-//   }
-// }
+@media screen and (min-width: $md ) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu {
+    flex: 1 1 auto;
+    max-width: 510px;
+}
 
 .mobileNav {
   display: flex;
@@ -106,20 +129,20 @@ h2.homeLogo {
   }
 }
 
-// @media screen and (min-width: $md) {
-//   .mobileNav {
-//     display: none;
-//   }
-// }
+@media screen and (min-width: $md) {
+  .mobileNav {
+    display: none;
+  }
+}
 
 .toggleNav {
   display: none;
   position: fixed;
-  background-color: $white;
+  background-color: $black;
   width: 100%;
   left: 0;
   top: 0;
-  padding-top: 1em;
+  padding-top: 3em;
   z-index: -1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
@@ -129,6 +152,7 @@ h2.homeLogo {
     li {
       list-style-type: none;
       margin: 20px;
+      text-align: right;
     }
   }
 

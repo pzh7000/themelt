@@ -1,0 +1,145 @@
+.archive-section {
+  text-align: center;
+  padding: 13em 0;
+}
+/* blinking component */
+@keyframes blink {30% { color: transparent }}
+.loader { font-size: 20px; }
+.loader__dot { animation: 1s blink infinite }
+.loader__dot:nth-child(2) { animation-delay: 250ms }
+.loader__dot:nth-child(3) { animation-delay: 500ms }
+/* end blink */
+
+/* blinking component slow */
+@keyframes blink {50% { color: transparent }}
+.loader2 { font-size: 100px;}
+.loader2__dot { animation: 3s blink infinite }
+.loader2__dot:nth-child(2) { animation-delay: 1s }
+.loader2__dot:nth-child(3) { animation-delay: 2s }
+/* end slow blink */
+
+.support-section {
+  text-align: center;
+  padding: 13em 0;
+}
+.latest-episode {
+  position: relative;
+}
+.related__thumb {
+  max-width: 500px;
+  width: 86%;
+  margin: auto;
+}
+.featured-img {
+    margin: 2em .5em .5em;
+}
+.podcast-episode {
+    position: relative;
+}
+.episode-player {
+  padding-top: 4em;
+}
+.sidebar-widget .podcast_player {
+    margin: 15px 0;
+    position: absolute;
+    top: -8em;
+    left: 0;
+    z-index: 1;
+}
+.recent-posts {
+  padding-top: 5em;
+  // background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+}
+.recent-posts:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, .9); */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.recent-posts-foreground {
+    position: relative;
+    z-index: 2;
+}
+.about {
+  // background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  z-index: -2;
+}
+.about-overlay:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, .9); */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+    z-index: -1;
+}
+.about-recent-posts {
+    background-color: black;
+    padding: 3em 0;
+}
+.about-hero {
+    background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 664px;
+		display: flex;
+		align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+
+}
+@media screen and (min-width: $xs) {
+  .recent-posts {
+    padding-top: 12em;
+    background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+  }
+  .about {
+    background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+  }
+  .about-hero {
+    min-height: 800px;
+
+  }
+}
+@media screen and (min-width: $md) {
+  .sidebar-widget .podcast_player {
+      margin: 15px 0;
+      position: absolute;
+      top: -10em;
+      left: 0;
+  }
+  .recent-posts {
+    padding-top: 12em;
+    background-image: url("http://themelt.test/wp-content/uploads/2019/08/galaxy-sunflowers.jpg");
+  }
+}

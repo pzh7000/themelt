@@ -14,7 +14,7 @@
 
 		<?php wp_head(); ?>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Pontano+Sans|Sarala|Scada" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Khula:800|Livvic|Work+Sans:900&display=swap" rel="stylesheet">
 		<script>
         // conditionizr.com
         // configure environment tests
@@ -37,18 +37,21 @@
 					<div class="container">
 						<nav class="desktopNav" role="navigation">
 							<div class="logo-title">
-								<!-- <a class="logo" href="<?php echo home_url(); ?>">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class="">
-								</a> -->
+								<a class="logo h1" href="<?php echo home_url(); ?>">
+									<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class=""> -->
+									The Melt
+								</a>
 							</div>
 
-							<?php html5blank_nav(); ?>
+							<div class="menu">
+								<?php html5blank_nav(); ?>
+							</div>
 						</nav>
 						<div class="mobileNav" id="mobileNav">
 							<div class="logo-title">
-								<a class="logo" href="<?php echo home_url(); ?>">
+								<a class="logo h1" href="<?php echo home_url(); ?>">
 									<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-									<!-- <img src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class=""> -->
+									The Melt
 								</a>
 							</div>
 
@@ -62,11 +65,6 @@
 							<?php html5blank_nav(); ?>
 						</nav>
 					</div>
-				</div>
-				<div class="sq1-header">
-					<img class="aligncenter" src="<?php echo get_template_directory_uri(); ?>/img/square_one_logo_only.png" alt="Square One Career Coaching" class="">
-					<h1 class="post-title align-center">Square One</h1>
-					<h2 class="align-center">Career Coaching</h2>
 				</div>
 
 

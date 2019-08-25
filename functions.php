@@ -131,8 +131,8 @@ function html5blank_styles()
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 
-    wp_register_style('square-one', get_template_directory_uri() . '/css/square-one.css', array(), '1.0', 'all');
-    wp_enqueue_style('square-one'); // Enqueue it!
+    wp_register_style('the-melt', get_template_directory_uri() . '/css/the-melt.css', array(), '1.0', 'all');
+    wp_enqueue_style('the-melt'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -264,7 +264,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Read More', 'html5blank') . '</a>';
 }
 
 // Remove Admin bar
@@ -358,8 +358,6 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_projects'); // Add Projects Custom Post Type
-add_action('init', 'create_post_type_lectures'); // Add Lectures Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -408,81 +406,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
-function create_post_type_projects()
-{
-    register_taxonomy_for_object_type('category', 'projects'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'projects');
-    register_post_type('projects', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Projects', 'projects'), // Rename these to suit
-            'singular_name' => __('Project', 'projects'),
-            'add_new' => __('Add New', 'projects'),
-            'add_new_item' => __('Add New Project', 'projects'),
-            'edit' => __('Edit', 'projects'),
-            'edit_item' => __('Edit Project', 'projects'),
-            'new_item' => __('New Project', 'projects'),
-            'view' => __('View Project', 'projects'),
-            'view_item' => __('View Project', 'projects'),
-            'search_items' => __('Search Project', 'projects'),
-            'not_found' => __('No Projects found', 'projects'),
-            'not_found_in_trash' => __('No Projects found in Trash', 'projects')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'menu_icon'   => 'dashicons-hammer',
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
 
-function create_post_type_lectures()
-{
-    register_taxonomy_for_object_type('category', 'lectures'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'lectures');
-    register_post_type('lectures', // Register Custom Post Type
-        array(
-        'labels' => array(
-            'name' => __('Lectures', 'lectures'), // Rename these to suit
-            'singular_name' => __('Lecture', 'lectures'),
-            'add_new' => __('Add New', 'lectures'),
-            'add_new_item' => __('Add New Lecture', 'lectures'),
-            'edit' => __('Edit', 'lectures'),
-            'edit_item' => __('Edit Lecture', 'lectures'),
-            'new_item' => __('New Lecture', 'lectures'),
-            'view' => __('View Lecture', 'lectures'),
-            'view_item' => __('View Lecture', 'lectures'),
-            'search_items' => __('Search Lectures', 'lectures'),
-            'not_found' => __('No Lectures found', 'lectures'),
-            'not_found_in_trash' => __('No Lectures found in Trash', 'lectures')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'menu_icon'   => 'dashicons-businessman',
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ) // Add Category and Post Tags support
-    ));
-}
 
 /*------------------------------------*\
 	ShortCode Functions
@@ -499,5 +423,40 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+?>
+
+<?php
+function ph_get_related_by_tag( $post_id, $number_of_posts = 3 ) {
+
+    if ( empty( $post_id ) ) {
+        return false;
+    }
+
+    $post_tags = wp_get_post_terms( $post_id, 'post_tag' );
+    $tag_ids = array();
+    foreach( $post_tags as $related_tag ) {
+        $tag_ids[] = $related_tag->name;
+    }
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => $number_of_posts,
+        'post__not_in'   => array( $post_id ),
+        'no_found_rows'  => true,
+        'orderby'        => 'rand'
+    );
+    if ( ! empty( $tag_ids ) ) {
+        $args['tags__in'] = $tag_ids;
+    }
+
+    $related_posts = get_posts($args);
+
+    if ( ! empty( $related_posts ) ) {
+        return $related_posts;
+    }
+
+    return false;
+}
+
 
 ?>

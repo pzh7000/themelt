@@ -1,0 +1,36 @@
+.latest-episode {
+  position: relative;
+}
+.related__thumb {
+  max-width: 500px;
+}
+.featured-img {
+    margin: 2em .5em .5em;
+}
+.podcast-episode {
+    position: relative;
+}
+.episode-player {
+  padding-top: 4em;
+}
+.podcast_player {
+    margin: 15px 0;
+    position: absolute;
+    top: -8em;
+    left: 0;
+    z-index: 1;
+}
+.recent-posts {
+  padding-top: 5em;
+}
+@media screen and (min-width: $md) {
+  .podcast_player {
+      margin: 15px 0;
+      position: absolute;
+      top: -10em;
+      left: 0;
+  }
+  .recent-posts {
+    padding-top: 12em;
+  }
+}

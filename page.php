@@ -1,41 +1,48 @@
 <?php get_header(); ?>
 <!-- Page.php -->
-	<main role="main">
-		<!-- section -->
-		<section>
 
-			<div class="full-width-container">
+<section id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<div class="page-content container">
 
-					<!-- article -->
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<!-- <h1 class="post-title align-center"><?php echo get_the_title(); ?></h1> -->
+			<!-- section -->
+			<section>
 
-						<?php the_content(); ?>
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-						<br class="clear">
+				<!-- article -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					</article>
-					<!-- /article -->
+					<?php the_content(); ?>
 
-					<?php endwhile; ?>
+					<?php comments_template( '', true ); // Remove if you don't want comments ?>
 
-					<?php else: ?>
+					<br class="clear">
 
-						<!-- article -->
-						<article>
+					<?php edit_post_link(); ?>
 
-						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+				</article>
+				<!-- /article -->
 
-					</article>
-					<!-- /article -->
+			<?php endwhile; ?>
 
-				<?php endif; ?>
-			</div>
+			<?php else: ?>
+
+				<!-- article -->
+				<article>
+
+					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+				</article>
+				<!-- /article -->
+
+			<?php endif; ?>
+
 		</section>
-		<!-- /section -->
-	</main>
+
+	</main><!-- #main -->
+</section><!-- #primary -->
 
 <?php get_footer(); ?>

@@ -1,14 +1,14 @@
 
 
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-<div class="flex-4-columns_responsive">
+<div class="flex-4-columns">
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<!-- post title -->
-		<h2>
+		<h4>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
+		</h4>
 		<!-- /post title -->
 
 		<!-- post thumbnail -->

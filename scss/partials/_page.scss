@@ -1,14 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  background: white;
+  background: $black;
+  color: $white;
   font-family: "Raleway",sans-serif sans-serif;
   font-weight: normal;
-  line-height: 1.5;
-  color: #2f2f2f;
+  // line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
+main {
+  padding-top: 100px;
+}
 /* Gutenburg Overrides */
 .wp-block-image img {
     max-width: 100%;
@@ -58,6 +61,13 @@ body {
   text-align: center;
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
 .p-2 {
   padding: 2em;
 }
