@@ -47,12 +47,6 @@
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<!-- post details -->
-				<!-- <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span> -->
-				<!-- /post details -->
-
 				<div class="align-left">
 					<?php the_content(); // Dynamic Content ?>
 				</div>
@@ -60,6 +54,8 @@
 				<div class="container align-right">
 					<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 				</div>
+
+				<?php comments_template(); ?>
 
 			</article>
 			<!-- /article -->
@@ -93,26 +89,8 @@ $args2 = array(
 	'post_type' => 'podcast',
 	'post__not_in' => array( $post_id )
 );
-// $related_posts = ph_get_related_by_tag( $post->ID, 3 );
+
 $related_posts = get_posts( $args2 );
-$count = wp_count_posts('podcast');
-// var_dump($count->publish);
-
-if ( $count->publish == 2 ) {
-	$args = array(
-		'posts_per_page' => 2,
-		'post__not_in' => array( $post_id ),
-		'post_type' => 'post'
-	);
-} elseif ( $count->publish == 3 ) {
-	$args = array(
-		'posts_per_page' => 1,
-		'post__not_in' => array( $post_id ),
-		'post_type' => 'post'
-	);
-}
-
-$myposts = get_posts( $args );
 
 ?>
 
@@ -144,27 +122,6 @@ $myposts = get_posts( $args );
 									</figure>
 
 									<h4 class="related__posttitle align-left"><?php echo $related_post->post_title ?></h4>
-								</a>
-							</div>
-						<?php endforeach; ?>
-						<?php foreach ( $myposts as $post ) : ?>
-								<div class="flex-3-columns">
-							<?php
-							$thumb_id = get_post_thumbnail_id( $post );
-							$img_url = wp_get_attachment_url( $thumb_id, 'full' );
-							?>
-
-								<a href="<?php echo get_permalink($post->ID) ?>" class="related__link">
-
-									<figure class="related__thumb">
-
-											<?php if ( ! empty( $img_url ) ) : ?>
-												<img class="related__old" src="<?php echo strip_tags( $img_url ) ?>">
-											<?php endif; ?>
-
-									</figure>
-
-									<h4 class="related__posttitle"><?php echo $post->post_title ?></h4>
 								</a>
 							</div>
 						<?php endforeach; ?>
